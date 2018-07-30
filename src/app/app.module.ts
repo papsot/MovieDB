@@ -1,16 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatToolbarModule } from '@angular/material';
 
 import { IndexComponent } from './components/index/index.component';
-import { IndextestComponent } from './components/indextest/indextest.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
     declarations: [
         IndexComponent,
-        IndextestComponent
+        MovieListComponent,
+        MovieDetailsComponent,
     ],
     imports: [
-        BrowserModule
+        BrowserModule,
+        MatToolbarModule
     ],
     providers: [],
     bootstrap: [IndexComponent]

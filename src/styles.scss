@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/reset';
+@import './styles/colorPalettes';
+
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+$mdb-app-primary: mat-palette($mdb-primary);
+$mdb-app-accent:  mat-palette($mdb-accent, A200, A100, A400);
+$mdb-app-warn:    mat-palette($mat-red);
+$mdb-app-theme: mat-light-theme($mdb-app-primary, $mdb-app-accent, $mdb-app-warn);
+
+@include angular-material-theme($mdb-app-theme);
