@@ -1,3 +1,11 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="main-toolbar">
     Movie Database
 </mat-toolbar>
+<div class="main-container flex-container">
+    <div class="list-container">
+        <sp-movie-list [movieList]="movieList"></sp-movie-list>
+    </div>
+    <div class="details-container">
+        <router-outlet></router-outlet>
+    </div>
+</div>

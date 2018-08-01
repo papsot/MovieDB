@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IMovie } from '../../classes/interfaces/movie';
 
 @Component({
-  selector: 'sp-movie-list',
-  templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.scss']
+    selector: 'sp-movie-list',
+    templateUrl: './movie-list.component.html',
+    styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit {
 
-  constructor() { }
+    @Input() movieList: Array<IMovie>;
 
-  ngOnInit() {
-  }
+    constructor() { }
+
+    ngOnInit() {
+    }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieDatabaseService } from '../../services/movie-database.service';
+import { IMovie } from '../../classes/interfaces/movie';
 
 @Component({
     selector: 'sp-index',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-    constructor() { }
+    movieList: Array<IMovie> = new Array<IMovie>();
+
+    constructor(private movieDBService: MovieDatabaseService) { }
 
     ngOnInit() {
+
+        this.movieDBService.getPopularMovies().subscribe(
+            response => {
+                console.log(response);
+                this.movieList = response.results;
+                console.log(this.movieList);
+            },
+            error => {
+                console.log(error);
+            }
+        );
+
     }
 
 }
