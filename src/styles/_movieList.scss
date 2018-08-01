@@ -1,0 +1,16 @@
+@import 'colorPalettes';
+
+.movie-tile {
+    padding-left: 5px;
+    background: white;
+    // margin: 10px;
+    transition: all .3s ease;
+    transform: scale(.95);
+    
+    &:hover {
+        cursor: pointer;
+        background: #ccc;
+        transform: scale(1);
+        // color: black;
+    }
+}

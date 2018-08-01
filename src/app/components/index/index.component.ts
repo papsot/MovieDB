@@ -15,6 +15,16 @@ export class IndexComponent implements OnInit {
 
     ngOnInit() {
 
+        this.movieDBService.getConfiguration().subscribe(
+            response => {
+                console.log(response);
+            },
+            error => {
+                console.log(error);
+            }
+        );
+
+
         this.movieDBService.getPopularMovies().subscribe(
             response => {
                 console.log(response);

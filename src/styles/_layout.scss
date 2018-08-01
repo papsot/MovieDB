@@ -4,7 +4,9 @@
 
 .main-container {
     height: 93vh;
-    padding: 0px 50px;
+    max-height: 93vh;
+    overflow-y: auto;
+    padding: 0px 40px;
 }
 
 .flex-container {
@@ -13,11 +15,13 @@
 
 
 .list-container {
-    width: 20%;
-    background: red;
+    width: 25%;
+    max-height: 93vh;
+    overflow-y: auto;
 }
 
 .details-container {
-    width: 80%;
+    width: 75%;
     background: skyblue;
+    padding: 40px;
 }

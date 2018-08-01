@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { MatToolbarModule } from '@angular/material';
+import { MatToolbarModule, MatGridListModule } from '@angular/material';
 
 import { IndexComponent } from './components/index/index.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
@@ -20,7 +20,8 @@ import { MovieDatabaseService } from './services/movie-database.service';
         BrowserModule,
         HttpClientModule,
         AppRoutingModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatGridListModule
     ],
     providers: [
         MovieDatabaseService

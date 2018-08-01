@@ -15,6 +15,10 @@ export class MovieDatabaseService {
     }
 
     getMovie(movieId: number) {
-        return this.http.get<IGetMovieResponse>('');
+        return this.http.get<IGetMovieResponse>('https://api.themoviedb.org/3/movie/' + movieId + '?api_key=fdcd977a12ee20da2fe6ffd425012720');
+    }
+
+    getConfiguration() {
+        return this.http.get('https://api.themoviedb.org/3/configuration?api_key=fdcd977a12ee20da2fe6ffd425012720');
     }
 }
