@@ -1,7 +1,10 @@
-<mat-grid-list class="movie-tile" cols="6" rowHeight="30px" *ngFor="let movie of movieList" (click)="showMovieDetails(movie.id)">
-    <mat-grid-tile colspan="1" rowspan="2">
-        <img src="https://image.tmdb.org/t/p/w92{{movie.backdrop_path}}" alt="">
-    </mat-grid-tile>
-    <mat-grid-tile colspan="5" rowspan="1">{{movie.title}}</mat-grid-tile>
-    <mat-grid-tile colspan="5" rowspan="1">{{movie.release_date}}</mat-grid-tile>
-</mat-grid-list>
+<div class="list-wrapper">
+    <mat-grid-list class="movie-tile" cols="6" rowHeight="34px" *ngFor="let movie of movieList" (click)="showMovieDetails(movie.id)" routerLink="moviedb/movies/{{movie.id}}">
+        <mat-grid-tile colspan="1" rowspan="2">
+            <img src="https://image.tmdb.org/t/p/w92{{movie.backdrop_path}}" alt="">
+        </mat-grid-tile>
+        <mat-grid-tile colspan="5" rowspan="1" class="movie-title"><b>{{movie.title}}</b></mat-grid-tile>
+        <mat-grid-tile colspan="5" rowspan="1" class="movie-rating">Rating: {{movie.vote_average}}/10</mat-grid-tile>
+    </mat-grid-list>
+</div>
+<mat-paginator class="list-stepper" [length]="100" [pageSize]="20" [showFirstLastButtons]="true" (page)="woot($event)" ></mat-paginator>

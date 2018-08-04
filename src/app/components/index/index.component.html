@@ -3,7 +3,7 @@
 </mat-toolbar>
 <div class="main-container flex-container">
     <div class="list-container">
-        <sp-movie-list [movieList]="movieList"></sp-movie-list>
+        <sp-movie-list [movieList]="popularMoviesResponse.results" [resultCount]="popularMoviesResponse.total_results" (pageChanged)=getPopularMovies($event)></sp-movie-list>
     </div>
     <div class="details-container">
         <router-outlet></router-outlet>

@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IMovie } from '../../classes/interfaces/movie';
-import { MovieDatabaseService } from '../../services/movie-database.service';
+import { PageEvent } from '../../../../node_modules/@angular/material';
 
 @Component({
     selector: 'sp-movie-list',
@@ -10,18 +10,21 @@ import { MovieDatabaseService } from '../../services/movie-database.service';
 export class MovieListComponent implements OnInit {
 
     @Input() movieList: Array<IMovie>;
+    @Input() resultCount: number;
+    @Output() movieSelected: EventEmitter<number> = new EventEmitter<number>();
+    @Output() pageChanged: EventEmitter<number> = new EventEmitter<number>();
 
-    constructor(private movieDBService: MovieDatabaseService) { }
+    constructor() { }
 
     ngOnInit() {
     }
 
     showMovieDetails(id: number) {
-        console.log(id);
-        this.movieDBService.getMovie(id).subscribe(
-            resp => console.log(resp),
-            error => console.log(error)
-        );
+        this.movieSelected.emit(id);
+    }
+
+    woot(event: PageEvent) {
+        this.pageChanged.emit(event.pageIndex + 1);
     }
 
 }

@@ -2,26 +2,30 @@
     height: 7vh;
 }
 
-.main-container {
+.landing-page {
     height: 93vh;
     max-height: 93vh;
     overflow-y: auto;
     padding: 0px 40px;
+
+    .title {
+        font-size: 2em;
+    }
 }
 
 .flex-container {
     display: flex;
+    justify-content: center;
 }
 
 
 .list-container {
     width: 25%;
     max-height: 93vh;
-    overflow-y: auto;
+    // overflow-y: auto;
 }
 
 .details-container {
     width: 75%;
-    background: skyblue;
-    padding: 40px;
+    // padding: 40px;
 }
