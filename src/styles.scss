@@ -41,6 +41,10 @@ body::-webkit-scrollbar-thumb {
     background: #555; 
 }
 
+:focus {
+    outline: none;
+} 
+
 
 @import '~@angular/material/theming';
 @include mat-core();

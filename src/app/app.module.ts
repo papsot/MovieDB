@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { MatToolbarModule, MatGridListModule, MatPaginatorModule } from '@angular/material';
+import { MatToolbarModule, MatGridListModule, MatPaginatorModule, MatProgressSpinnerModule } from '@angular/material';
 
 import { IndexComponent } from './components/index/index.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
@@ -26,7 +26,8 @@ import { MovieDatabaseService } from './services/movie-database.service';
         AppRoutingModule,
         MatToolbarModule,
         MatGridListModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatProgressSpinnerModule
     ],
     providers: [
         MovieDatabaseService

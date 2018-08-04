@@ -23,7 +23,7 @@ export class MovieListComponent implements OnInit {
         this.movieSelected.emit(id);
     }
 
-    woot(event: PageEvent) {
+    changePage(event: PageEvent) {
         this.pageChanged.emit(event.pageIndex + 1);
     }
 
