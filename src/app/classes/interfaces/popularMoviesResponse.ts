@@ -1,13 +1,13 @@
 import { IMovie } from './movie';
 
-export interface IGetPopularMoviesResponse {
+export interface IGetMovieListResponse {
     page: number;
     results: IMovie[];
     total_pages: number;
     total_results: number;
 }
 
-export class PopularMoviesResponse implements IGetPopularMoviesResponse {
+export class GetMovieListResponse implements IGetMovieListResponse {
     page: number;
     results: IMovie[];
     total_pages: number;

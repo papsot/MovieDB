@@ -1,0 +1,7 @@
+<h2>Movies you might also like</h2>
+
+<div class="related-movies">
+    <div class="movie" *ngFor="let relatedMovie of relatedMovieList">
+        <img src="https://image.tmdb.org/t/p/w92{{relatedMovie.poster_path}}" alt="">
+    </div>
+</div>

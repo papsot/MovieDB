@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { MovieDatabaseService } from '../../services/movie-database.service';
 import { IMovie } from '../../classes/interfaces/movie';
-import { IGetPopularMoviesResponse, PopularMoviesResponse } from '../../classes/interfaces/popularMoviesResponse';
+import { IGetMovieListResponse, GetMovieListResponse } from '../../classes/interfaces/popularMoviesResponse';
 
 @Component({
     selector: 'sp-index',
@@ -11,7 +11,7 @@ import { IGetPopularMoviesResponse, PopularMoviesResponse } from '../../classes/
 })
 export class IndexComponent implements OnInit {
 
-    popularMoviesResponse: PopularMoviesResponse = new PopularMoviesResponse();
+    movieListResponse: GetMovieListResponse = new GetMovieListResponse();
 
     constructor(private movieDBService: MovieDatabaseService) { }
 
@@ -20,16 +20,22 @@ export class IndexComponent implements OnInit {
             response => console.log(response),
             error => console.log(error)
         );
-
-        this.getPopularMovies(1);
     }
 
 
     getPopularMovies(pageNumber: number) {
         this.movieDBService.getPopularMovies(pageNumber).subscribe(
-            response => this.popularMoviesResponse = response,
+            response => this.movieListResponse = response,
             error => console.log(error)
         );
+    }
+
+    searchMovie(queryString: string) {
+        this.movieDBService.searchMovie(queryString).subscribe(
+            response => this.movieListResponse = response,
+            error => console.log(error)
+        );
+        // console.log(queryString);
     }
 
 

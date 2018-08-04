@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { IMovie } from '../../classes/interfaces/movie';
 import { PageEvent } from '../../../../node_modules/@angular/material';
 
@@ -7,7 +7,7 @@ import { PageEvent } from '../../../../node_modules/@angular/material';
     templateUrl: './movie-list.component.html',
     styleUrls: ['./movie-list.component.scss']
 })
-export class MovieListComponent implements OnInit {
+export class MovieListComponent implements OnInit, OnChanges {
 
     @Input() movieList: Array<IMovie>;
     @Input() resultCount: number;
@@ -17,6 +17,10 @@ export class MovieListComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
+    }
+
+    ngOnChanges(change: SimpleChanges) {
+        change['resultCount'].currentValue > 100 ? this.resultCount = 100 : true;
     }
 
     showMovieDetails(id: number) {

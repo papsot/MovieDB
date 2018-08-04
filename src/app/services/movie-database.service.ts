@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IGetPopularMoviesResponse } from '../classes/interfaces/popularMoviesResponse';
-import { IGetMovieResponse } from '../classes/interfaces/movieResponse';
+import { IGetMovieListResponse } from '../classes/interfaces/popularMoviesResponse';
 import { IMovieExtended } from '../classes/interfaces/movie';
 
 @Injectable({
@@ -14,8 +13,8 @@ export class MovieDatabaseService {
     constructor(private http: HttpClient) { }
 
     getPopularMovies(pageNumber: number) {
-        return this.http.get<IGetPopularMoviesResponse>(
-            'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&page=' + pageNumber + '&page_size=40&api_key=' + this.API_KEY
+        return this.http.get<IGetMovieListResponse>(
+            'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&page=' + pageNumber + '&api_key=' + this.API_KEY
         );
     }
 
@@ -28,10 +27,10 @@ export class MovieDatabaseService {
     }
 
     searchMovie(queryString: string) {
-        return this.http.get('https://api.themoviedb.org/3/search/movie?api_key=' + this.API_KEY + 'query=' + queryString );
+        return this.http.get<IGetMovieListResponse>('https://api.themoviedb.org/3/search/movie?api_key=' + this.API_KEY + '&query=' + queryString );
     }
 
     getRelatedMovies(movieId: number) {
-        return this.http.get('https://api.themoviedb.org/3/movie/' + movieId + '/similar?api_key=' + this.API_KEY);
+        return this.http.get<IGetMovieListResponse>('https://api.themoviedb.org/3/movie/' + movieId + '/similar?api_key=' + this.API_KEY);
     }
 }

@@ -3,7 +3,14 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { MatToolbarModule, MatGridListModule, MatPaginatorModule, MatProgressSpinnerModule } from '@angular/material';
+import {
+    MatToolbarModule,
+    MatGridListModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
+    MatButtonModule
+} from '@angular/material';
 
 import { IndexComponent } from './components/index/index.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
@@ -11,6 +18,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 import { MovieDatabaseService } from './services/movie-database.service';
+import { RelatedMoviesComponent } from './components/related-movies/related-movies.component';
 
 @NgModule({
     declarations: [
@@ -18,6 +26,7 @@ import { MovieDatabaseService } from './services/movie-database.service';
         MovieListComponent,
         MovieDetailsComponent,
         LandingPageComponent,
+        RelatedMoviesComponent,
     ],
     imports: [
         BrowserModule,
@@ -27,7 +36,9 @@ import { MovieDatabaseService } from './services/movie-database.service';
         MatToolbarModule,
         MatGridListModule,
         MatPaginatorModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatIconModule,
+        MatButtonModule
     ],
     providers: [
         MovieDatabaseService

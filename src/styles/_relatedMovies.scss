@@ -1,0 +1,19 @@
+.related-movies {
+    display: flex;
+    justify-content: flex-start;
+
+    .movie {
+        margin: 0px 30px;
+
+        img {
+            transform: scale(.95);
+            transition: all .3s ease;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1);
+                box-shadow: 5px 5px 5px rgb(168, 168, 168);
+            }
+        }
+    }
+}

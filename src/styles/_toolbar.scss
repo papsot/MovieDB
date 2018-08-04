@@ -1,0 +1,33 @@
+.mat-toolbar.mat-toolbar-single-row.main-toolbar {
+    height: 7vh;
+}
+
+.main-toolbar {
+    .search-input {
+        border-width: 0px 0px 2px 0px;
+        border-color: white;
+        border-style: solid;
+        margin-left: 40px;
+        width: 230px;
+        padding: 0px 10px;
+        
+        input {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: .8em;
+        }
+    }
+
+    .popular-button {
+        margin: 0px 30px;
+    }
+
+    .search-button {
+        margin: 0px 20px;
+    }
+
+    .spacer {
+        flex: 1 1 auto;
+    }
+}
