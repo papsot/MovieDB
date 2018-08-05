@@ -5,8 +5,8 @@ import { LandingPageComponent } from '../components/landing-page/landing-page.co
 
 
 export const appRoutes: Routes = [
-    { path: 'moviedb', component: MovieDetailsComponent },
-    { path: 'moviedb/movies/:id', component: MovieDetailsComponent },
-    { path: '', redirectTo: '/moviedb', pathMatch: 'full' },
-    { path: '**', component: LandingPageComponent }
+    { path: 'index', component: MovieDetailsComponent },
+    { path: 'movies/:id', component: MovieDetailsComponent },
+    { path: '', redirectTo: '/index', pathMatch: 'full' },
+    { path: '**', component: MovieDetailsComponent }
 ];

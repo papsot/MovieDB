@@ -19,6 +19,8 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 
 import { MovieDatabaseService } from './services/movie-database.service';
 import { RelatedMoviesComponent } from './components/related-movies/related-movies.component';
+import { MovieCastComponent } from './components/movie-cast/movie-cast.component';
+import { MovieRatingComponent } from './components/movie-rating/movie-rating.component';
 
 @NgModule({
     declarations: [
@@ -27,6 +29,8 @@ import { RelatedMoviesComponent } from './components/related-movies/related-movi
         MovieDetailsComponent,
         LandingPageComponent,
         RelatedMoviesComponent,
+        MovieCastComponent,
+        MovieRatingComponent,
     ],
     imports: [
         BrowserModule,

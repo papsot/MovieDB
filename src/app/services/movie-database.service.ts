@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IGetMovieListResponse } from '../classes/interfaces/popularMoviesResponse';
 import { IMovieExtended } from '../classes/interfaces/movie';
+import { IMovieCredits } from '../classes/interfaces/movieCredits';
 
 @Injectable({
     providedIn: 'root'
@@ -32,5 +33,9 @@ export class MovieDatabaseService {
 
     getRelatedMovies(movieId: number) {
         return this.http.get<IGetMovieListResponse>('https://api.themoviedb.org/3/movie/' + movieId + '/similar?api_key=' + this.API_KEY);
+    }
+
+    getMovieCredits(movieId: number) {
+        return this.http.get<IMovieCredits>('https://api.themoviedb.org/3/movie/' + movieId + '/credits?api_key=' + this.API_KEY);
     }
 }

@@ -1,0 +1,9 @@
+<h2><u>Top Billed Cast:</u></h2>
+<div class="cast-members">
+    <div class="member" *ngFor="let castMember of movieCast">
+        <img *ngIf="castMember.profile_path" src="https://image.tmdb.org/t/p/w92{{castMember.profile_path}}" alt="">
+        <img style="max-width: 100px" *ngIf="!castMember.profile_path" src="../../../assets/images/MDBlogo.png" alt="">
+        <div class="member-name">{{castMember.name}}</div>
+        <div class="member-character">{{castMember.character}}</div>
+    </div>
+</div>

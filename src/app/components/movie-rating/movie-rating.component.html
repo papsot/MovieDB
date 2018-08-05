@@ -1,0 +1,6 @@
+<h2>Rating: {{rating}} / 10</h2>
+<span *ngFor="let star of ratingArray">
+    <mat-icon *ngIf="star === 1">star</mat-icon>
+    <mat-icon *ngIf="star === 0.5">star_half</mat-icon>
+    <mat-icon *ngIf="!star">star_border</mat-icon>
+</span>

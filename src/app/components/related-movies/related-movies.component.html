@@ -1,7 +1,8 @@
-<h2>Movies you might also like</h2>
+<h2><u>Movies you might also like:</u></h2>
 
 <div class="related-movies">
-    <div class="movie" *ngFor="let relatedMovie of relatedMovieList">
+    <div class="movie" *ngFor="let relatedMovie of relatedMovieList" routerLink="/movies/{{relatedMovie.id}}">
         <img src="https://image.tmdb.org/t/p/w92{{relatedMovie.poster_path}}" alt="">
+        <img *ngIf="!relatedMovie.poster_path" src="../../../assets/images/MDBlogo.png" alt="">
     </div>
 </div>

@@ -1,17 +1,26 @@
-<div class="backdrop-image" [style.background-image]="'url(https://image.tmdb.org/t/p/w1280' + movie.backdrop_path + ')'">
-    
-</div>
-<div class="movie-details">
+<div class="backdrop-image" [style.background-image]="'url(https://image.tmdb.org/t/p/w1280' + movie.backdrop_path + ')'"></div>
+<div class="movie-details-section">
     <div class="poster-image">
         <img src="https://image.tmdb.org/t/p/w342{{movie.poster_path}}" alt="">
     </div>
     <div class="space"></div>
     <div class="main-info">
         <h1 class="title">{{movie.title}}</h1>
+        <h6>{{movie.tagline}}</h6>
         <span *ngFor="let genre of movie.genres" class="movie-genre-chip">{{genre.name}}</span>
+
+        <div class="rating-section">
+            <sp-movie-rating [rating]="movie.vote_average"></sp-movie-rating>
+        </div>
 
         <p>{{movie.overview}}</p>
 
-        <sp-related-movies [relatedMovieList]="relatedMovies"></sp-related-movies>
+        <div class="cast-section">
+            <sp-movie-cast *ngIf="movie" [movieCast]="movieCast"></sp-movie-cast>
+        </div>
+
     </div>
+</div>
+<div class="related-section">
+    <sp-related-movies *ngIf="movie" [relatedMovieList]="relatedMovies"></sp-related-movies>
 </div>

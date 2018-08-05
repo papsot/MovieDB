@@ -6,17 +6,17 @@
     </button>
     <div class="spacer"></div>
     <div class="search-input">
-        <input #searchInput type="text" placeholder="search movie">
+        <input #searchInput type="text" placeholder="search movie" (keyup.enter)=searchMovie(searchInput.value)>
     </div>
     <button mat-icon-button class="search-button" (click)="searchMovie(searchInput.value)">
         <mat-icon aria-label="search movie">search</mat-icon>
     </button>
 </mat-toolbar>
 <div class="main-container flex-container">
-    <div class="list-container" [ngClass]="{'visible': movieListResponse.results.length}">
+    <div class="list-container">
         <sp-movie-list [movieList]="movieListResponse.results" [resultCount]="movieListResponse.total_results" (pageChanged)=getPopularMovies($event)></sp-movie-list>
     </div>
-    <div class="details-container" [ngClass]="{'full-width': !movieListResponse.results.length}">
+    <div class="details-container">
         <router-outlet></router-outlet>
     </div>
 </div>
