@@ -1,5 +1,5 @@
-<div class="backdrop-image" [style.background-image]="'url(https://image.tmdb.org/t/p/w1280' + movie.backdrop_path + ')'"></div>
-<div class="movie-details-section">
+<div *ngIf="movie" class="backdrop-image" [style.background-image]="'url(https://image.tmdb.org/t/p/w1280' + movie.backdrop_path + ')'"></div>
+<div class="movie-details-section" *ngIf="movie">
     <div class="poster-image">
         <img src="https://image.tmdb.org/t/p/w342{{movie.poster_path}}" alt="">
     </div>
@@ -16,11 +16,14 @@
         <p>{{movie.overview}}</p>
 
         <div class="cast-section">
-            <sp-movie-cast *ngIf="movie" [movieCast]="movieCast"></sp-movie-cast>
+            <sp-movie-cast [movieCast]="movieCast"></sp-movie-cast>
         </div>
 
     </div>
 </div>
-<div class="related-section">
-    <sp-related-movies *ngIf="movie" [relatedMovieList]="relatedMovies"></sp-related-movies>
+<div class="related-section" *ngIf="movie">
+    <sp-related-movies [relatedMovieList]="relatedMovies"></sp-related-movies>
+</div>
+<div class="no-movie-message" *ngIf="!movie">
+    Learn everything about your favorite movies in the MovieDB!
 </div>

@@ -13,7 +13,8 @@ import { MovieCredits, IMovieCast } from '../../classes/interfaces/movieCredits'
 })
 export class MovieDetailsComponent implements OnInit {
 
-    movie: MovieExtended = new MovieExtended();
+    // movie: MovieExtended = new MovieExtended();
+    movie: MovieExtended;
     relatedMovies: Array<IMovie> = new Array<IMovie>();
     movieCast: Array<IMovieCast> = new Array<IMovieCast>();
 
