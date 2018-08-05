@@ -3,6 +3,12 @@
 }
 
 .main-toolbar {
+
+    .main-logo img {
+        height: 64px;
+        padding: 0px 10px;
+    }
+
     .search-input {
         border-width: 0px 0px 2px 0px;
         border-color: white;

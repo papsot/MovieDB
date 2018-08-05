@@ -15,7 +15,6 @@ import {
 import { IndexComponent } from './components/index/index.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 import { MovieDatabaseService } from './services/movie-database.service';
 import { RelatedMoviesComponent } from './components/related-movies/related-movies.component';
@@ -27,7 +26,6 @@ import { MovieRatingComponent } from './components/movie-rating/movie-rating.com
         IndexComponent,
         MovieListComponent,
         MovieDetailsComponent,
-        LandingPageComponent,
         RelatedMoviesComponent,
         MovieCastComponent,
         MovieRatingComponent,
