@@ -16,7 +16,7 @@ export class RelatedMoviesComponent implements OnInit, OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        console.log(changes['relatedMovieList']);
+        // console.log(changes['relatedMovieList']);
     }
 
 }

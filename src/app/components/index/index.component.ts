@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MovieDatabaseService } from '../../services/movie-database.service';
-import { IMovie } from '../../classes/interfaces/movie';
-import { IGetMovieListResponse, GetMovieListResponse } from '../../classes/interfaces/popularMoviesResponse';
+// import { IMovie } from '../../classes/interfaces/movie';
+import { GetMovieListResponse } from '../../classes/interfaces/popularMoviesResponse';
+import { Router } from '../../../../node_modules/@angular/router';
 
 @Component({
     selector: 'sp-index',
@@ -13,7 +14,7 @@ export class IndexComponent implements OnInit {
 
     movieListResponse: GetMovieListResponse = new GetMovieListResponse();
 
-    constructor(private movieDBService: MovieDatabaseService) { }
+    constructor(private movieDBService: MovieDatabaseService, private router: Router) { }
 
     ngOnInit() {
         this.movieDBService.getConfiguration().subscribe(
@@ -35,10 +36,12 @@ export class IndexComponent implements OnInit {
             response => this.movieListResponse = response,
             error => console.log(error)
         );
-        // console.log(queryString);
     }
 
 
-
+    goToIndex() {
+        this.movieListResponse = new GetMovieListResponse();
+        this.router.navigateByUrl('/index');
+    }
 
 }

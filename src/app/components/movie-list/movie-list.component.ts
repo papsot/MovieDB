@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { IMovie } from '../../classes/interfaces/movie';
 import { PageEvent } from '../../../../node_modules/@angular/material';
+import { ActivatedRoute } from '../../../../node_modules/@angular/router';
 
 @Component({
     selector: 'sp-movie-list',
@@ -14,9 +15,13 @@ export class MovieListComponent implements OnInit, OnChanges {
     @Output() movieSelected: EventEmitter<number> = new EventEmitter<number>();
     @Output() pageChanged: EventEmitter<number> = new EventEmitter<number>();
 
-    constructor() { }
+    constructor(private route: ActivatedRoute) { }
 
     ngOnInit() {
+        this.route.params.subscribe(
+            response => console.log(response['id']),
+            error => console.log(error)
+        );
     }
 
     ngOnChanges(change: SimpleChanges) {

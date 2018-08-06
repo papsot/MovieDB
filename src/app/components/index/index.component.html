@@ -1,8 +1,8 @@
 <mat-toolbar color="primary" class="main-toolbar">
-    <div class="main-logo">
+    <div class="main-logo" (click)="goToIndex()">
         <img src="../../../assets/images/MDBlogo_white.png" alt="">
+        <span routerLink="/index">Movie DB</span>
     </div>
-    Movie DB
     <button mat-flat-button class="popular-button" (click)="getPopularMovies(1)">
         <mat-icon aria-label="get popular movies">star</mat-icon>
         See the most popular movies!

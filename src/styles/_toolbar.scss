@@ -4,9 +4,18 @@
 
 .main-toolbar {
 
-    .main-logo img {
-        height: 64px;
-        padding: 0px 10px;
+    .main-logo {
+        display: flex;
+        align-items: center;
+
+        img{
+            height: 64px;
+            padding: 0px 10px;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .search-input {
