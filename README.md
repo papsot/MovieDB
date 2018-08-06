@@ -7,7 +7,13 @@ install angular cli:
 ```
 npm install -g @angular/cli
 ```
-and run command 
+
+install node modules: 
+```
+npm install
+```
+
+and finally run command:: 
 ```
 ng serve -o
 ```
