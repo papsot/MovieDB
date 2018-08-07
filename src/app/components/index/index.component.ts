@@ -32,13 +32,17 @@ export class IndexComponent implements OnInit {
 	}
 
 	searchMovie(queryString: string, page?: number) {
-		this.movieDBService.searchMovie(queryString, page).subscribe(
-			response => {
-				this.movieListResponse = response;
-				this.popularMoviesShown = false;
-			},
-			error => this.handleError()
-		);
+		if (queryString) {
+			this.movieDBService.searchMovie(queryString, page).subscribe(
+				response => {
+					this.movieListResponse = response;
+					this.popularMoviesShown = false;
+				},
+				error => this.handleError()
+			);
+		} else {
+			this.goToIndex();
+		}
 	}
 
 	getPage(pageNumber: number) {
@@ -56,7 +60,7 @@ export class IndexComponent implements OnInit {
 			this.searchMovie(this.searchInput);
 			setTimeout(() => {
 				this.inThrottle = false;
-			}, 200);
+			}, 400);
 		}
 	}
 
