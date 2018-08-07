@@ -8,7 +8,8 @@
     <mat-grid-list class="movie-tile" cols="6" rowHeight="34px" *ngFor="let movie of movieList" (click)="showMovieDetails(movie.id)"
         routerLink="movies/{{movie.id}}">
         <mat-grid-tile colspan="1" rowspan="2">
-            <img src="https://image.tmdb.org/t/p/w92{{movie.backdrop_path}}" alt="">
+            <img src="https://image.tmdb.org/t/p/w92{{movie.poster_path}}" alt="">
+            <img *ngIf="!movie.poster_path" src="../../../assets/images/MDBlogo.png" alt="" style="width: 92px">
         </mat-grid-tile>
         <mat-grid-tile colspan="5" rowspan="1" class="movie-title">
             <b>{{movie.title}}</b>

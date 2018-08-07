@@ -60,12 +60,11 @@ export class IndexComponent implements OnInit {
 			this.searchMovie(this.searchInput);
 			setTimeout(() => {
 				this.inThrottle = false;
-			}, 400);
+			}, 200);
 		}
 	}
 
 	handleError() {
 		this.snackBar.open('Woops! Something went wrong!');
 	}
-
 }
