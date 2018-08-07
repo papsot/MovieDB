@@ -49,7 +49,7 @@
 
 .cast-section {
     margin-top: 20px;
-    // width: 90%;
+    width: 90%;
     overflow-y: auto;
     max-height: 250px;
 }
@@ -63,11 +63,16 @@
     top: -30px;
 }
 
+.cast-members {
+	max-width: 80%;
+	overflow-x: auto;
+}
+
 .related-movies, .cast-members {
     margin-top: 10px;
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
 
     .movie {
         margin-right: 20px;

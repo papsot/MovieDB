@@ -1,15 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import {
-    MatToolbarModule,
-    MatGridListModule,
-    MatPaginatorModule,
-    MatProgressSpinnerModule,
-    MatIconModule,
-    MatButtonModule
+	MatToolbarModule,
+	MatGridListModule,
+	MatPaginatorModule,
+	MatProgressSpinnerModule,
+	MatIconModule,
+	MatButtonModule
 } from '@angular/material';
 
 import { IndexComponent } from './components/index/index.component';
@@ -22,29 +23,30 @@ import { MovieCastComponent } from './components/movie-cast/movie-cast.component
 import { MovieRatingComponent } from './components/movie-rating/movie-rating.component';
 
 @NgModule({
-    declarations: [
-        IndexComponent,
-        MovieListComponent,
-        MovieDetailsComponent,
-        RelatedMoviesComponent,
-        MovieCastComponent,
-        MovieRatingComponent,
-    ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        MatToolbarModule,
-        MatGridListModule,
-        MatPaginatorModule,
-        MatProgressSpinnerModule,
-        MatIconModule,
-        MatButtonModule
-    ],
-    providers: [
-        MovieDatabaseService
-    ],
-    bootstrap: [IndexComponent]
+	declarations: [
+		IndexComponent,
+		MovieListComponent,
+		MovieDetailsComponent,
+		RelatedMoviesComponent,
+		MovieCastComponent,
+		MovieRatingComponent,
+	],
+	imports: [
+		BrowserModule,
+		HttpClientModule,
+		BrowserAnimationsModule,
+		AppRoutingModule,
+		MatToolbarModule,
+		MatGridListModule,
+		MatPaginatorModule,
+		MatProgressSpinnerModule,
+		MatIconModule,
+		MatButtonModule,
+		FormsModule
+	],
+	providers: [
+		MovieDatabaseService
+	],
+	bootstrap: [IndexComponent]
 })
 export class AppModule { }
