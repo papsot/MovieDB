@@ -10,7 +10,9 @@ import {
 	MatPaginatorModule,
 	MatProgressSpinnerModule,
 	MatIconModule,
-	MatButtonModule
+	MatButtonModule,
+	MatSnackBarModule,
+	MAT_SNACK_BAR_DEFAULT_OPTIONS
 } from '@angular/material';
 
 import { IndexComponent } from './components/index/index.component';
@@ -42,10 +44,12 @@ import { MovieRatingComponent } from './components/movie-rating/movie-rating.com
 		MatProgressSpinnerModule,
 		MatIconModule,
 		MatButtonModule,
+		MatSnackBarModule,
 		FormsModule
 	],
 	providers: [
-		MovieDatabaseService
+		MovieDatabaseService,
+		{provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 3500 }}
 	],
 	bootstrap: [IndexComponent]
 })

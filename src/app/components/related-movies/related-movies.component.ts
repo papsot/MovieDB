@@ -2,21 +2,17 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 import { IMovie } from '../../classes/interfaces/movie';
 
 @Component({
-    selector: 'sp-related-movies',
-    templateUrl: './related-movies.component.html',
-    styleUrls: ['./related-movies.component.scss']
+	selector: 'sp-related-movies',
+	templateUrl: './related-movies.component.html',
+	styleUrls: ['./related-movies.component.scss']
 })
-export class RelatedMoviesComponent implements OnInit, OnChanges {
+export class RelatedMoviesComponent implements OnInit {
 
-    @Input() relatedMovieList: Array<IMovie> = new Array<IMovie>();
+	@Input() relatedMovieList: Array<IMovie> = new Array<IMovie>();
 
-    constructor() { }
+	constructor() { }
 
-    ngOnInit() {
-    }
-
-    ngOnChanges(changes: SimpleChanges) {
-        // console.log(changes['relatedMovieList']);
-    }
+	ngOnInit() {
+	}
 
 }

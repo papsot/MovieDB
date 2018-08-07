@@ -16,4 +16,4 @@
         <mat-grid-tile colspan="5" rowspan="1" class="movie-rating">Rating: {{movie.vote_average}}/10</mat-grid-tile>
     </mat-grid-list>
 </div>
-<mat-paginator *ngIf="movieList.length" class="list-stepper" [hidePageSize]="true" [length]="resultCount" [pageSize]="20" [showFirstLastButtons]="true" (page)="changePage($event)"></mat-paginator>
+<mat-paginator class="list-stepper" [hidePageSize]="true" [length]="resultCount" [pageSize]="20" [showFirstLastButtons]="true" (page)="changePage($event)"></mat-paginator>
