@@ -6,7 +6,7 @@
     </mat-grid-list>
 
     <mat-grid-list class="movie-tile" cols="6" rowHeight="34px" *ngFor="let movie of movieList" (click)="showMovieDetails(movie.id)"
-        routerLink="movies/{{movie.id}}">
+        routerLink="movies/{{movie.id}}" routerLinkActive="active-movie">
         <mat-grid-tile colspan="1" rowspan="2">
             <img src="https://image.tmdb.org/t/p/w92{{movie.poster_path}}" alt="">
             <img *ngIf="!movie.poster_path" src="../../../assets/images/MDBlogo.png" alt="" style="width: 92px">
